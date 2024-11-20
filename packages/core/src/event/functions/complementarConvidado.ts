@@ -6,11 +6,11 @@ export default function complementarConvidado(convidado: Partial<Convidado>): Co
     if(erros.length > 0)
         throw new Error(erros.join('\n'));
     const qtdeAcompanhantes = convidado.qtdeAcompanhantes ?? 0;
-    const possuiAcompanhantes = convidado.possuiAcompanhante && convidado.confirmado && qtdeAcompanhantes > 0;
+    const possuiAcompanhantes = convidado.possuiAcompanhantes && convidado.confirmado && qtdeAcompanhantes > 0;
     const convidadoAtualizado = {
         ...convidado,
         qtdeAcompanhantes: possuiAcompanhantes ? qtdeAcompanhantes : 0,
-        possuiAcompanhante: possuiAcompanhantes
+        possuiAcompanhantes: possuiAcompanhantes
     };
     return convidadoAtualizado as Convidado;
 }
